@@ -7,7 +7,7 @@ import scala.util._
   */
 object ScalaStyle {
   def main(args: Array[String]): Unit = {
-    val result = Try(buyCigarettes(18))
+    val result = Try(buyCigarettes(30))
     println( result )
     val finalResult = result match {
       case Success(value) => "buy success"
@@ -15,6 +15,11 @@ object ScalaStyle {
     }
 
     println(finalResult)
+
+
+    // This is a function to use try.isSuccess
+    if( result.isSuccess )
+      println(result)
 
     println("======= Use Option ======")
     val result1 = Try(buyCigarettes(18)).toOption
